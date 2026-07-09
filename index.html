@@ -1,33 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de Massa</title>
+
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div>
-        <h2>Conversor de Massa - v1.0</h2>
-        
+
+    <div class="container">
+        <h2>Conversor de Massa</h2>
+
         <input type="number" id="valorInput" placeholder="Digite o valor">
-        
+
         <select id="unidadeOrigem">
             <option value="g">Gramas (g)</option>
             <option value="kg">Quilogramas (kg)</option>
             <option value="oz">Onças (oz)</option>
             <option value="lb">Libras (lb)</option>
         </select>
-        
+
         <span>para</span>
-        
+
         <select id="unidadeDestino">
             <option value="kg">Quilogramas (kg)</option>
             <option value="g">Gramas (g)</option>
             <option value="oz">Onças (oz)</option>
             <option value="lb">Libras (lb)</option>
         </select>
-        
+
         <br><br>
+
         <button onclick="calcularConversao()">Converter</button>
 
         <h3 id="resultado">Resultado aparecerá aqui</h3>
@@ -35,21 +41,18 @@
 
     <script>
         function calcularConversao() {
-            // Captura os dados do formulário
-            const valorInput = document.getElementById('valorInput').value;
-            const origem = document.getElementById('unidadeOrigem').value;
-            const destino = document.getElementById('unidadeDestino').value;
-            
-            // Converte o texto digitado para número decimal
+            const valorInput = document.getElementById("valorInput").value;
+            const origem = document.getElementById("unidadeOrigem").value;
+            const destino = document.getElementById("unidadeDestino").value;
+
             const valor = parseFloat(valorInput);
 
-            // Validação de segurança
             if (isNaN(valor)) {
-                document.getElementById('resultado').innerText = "Por favor, digite um número válido!";
+                document.getElementById("resultado").innerText =
+                    "Por favor, digite um número válido!";
                 return;
             }
 
-            // Dicionário de taxas de conversão (baseado em gramas)
             const taxasParaGrama = {
                 g: 1,
                 kg: 1000,
@@ -57,14 +60,17 @@
                 lb: 453.592
             };
 
-            // Cálculo matemático
+            // Converte para gramas
             const valorEmGramas = valor * taxasParaGrama[origem];
+
+            // Converte para a unidade de destino
             const resultadoFinal = valorEmGramas / taxasParaGrama[destino];
 
-            // Exibe o resultado na tela
-            document.getElementById('resultado').innerText = 
+            // Exibe o resultado
+            document.getElementById("resultado").innerText =
                 `${valor} ${origem} = ${resultadoFinal.toFixed(4)} ${destino}`;
         }
     </script>
+
 </body>
 </html>
