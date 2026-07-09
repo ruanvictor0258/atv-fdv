@@ -8,5 +8,6 @@ Projeto da disciplina para praticar versionamento com Git/GitHub.
 * Pyetro Ribeiro- [@pyetro-cof](https://github.com/pyetro-cod)
 
 ## Status do Desenvolvimento
-* *Estrutura Visual (HTML):* Concluída.
-* *Lógica de Conversão (JavaScript):* Pendente (Será implementada para a release v1.0.0)
+* **Estrutura Visual (HTML):** Concluída.
+* **Lógica de Conversão (JavaScript):** Concluída (Implementada na release v1.0.0).
+* **Estilização (CSS):** Pendente (Será implementada para a release v2.0.0).
