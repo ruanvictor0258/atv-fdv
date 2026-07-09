@@ -42,6 +42,12 @@
             
             // Converte o texto digitado para número decimal
             const valor = parseFloat(valorInput);
+
+            // Validação de segurança
+            if (isNaN(valor)) {
+                document.getElementById('resultado').innerText = "Por favor, digite um número válido!";
+                return;
+            }
         }
     </script>
 </body>
