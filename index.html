@@ -35,7 +35,13 @@
 
     <script>
         function calcularConversao() {
-            // A lógica vai entrar aqui
+            // Captura os dados do formulário
+            const valorInput = document.getElementById('valorInput').value;
+            const origem = document.getElementById('unidadeOrigem').value;
+            const destino = document.getElementById('unidadeDestino').value;
+            
+            // Converte o texto digitado para número decimal
+            const valor = parseFloat(valorInput);
         }
     </script>
 </body>
