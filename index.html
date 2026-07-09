@@ -56,6 +56,14 @@
                 oz: 28.3495,
                 lb: 453.592
             };
+
+            // Cálculo matemático
+            const valorEmGramas = valor * taxasParaGrama[origem];
+            const resultadoFinal = valorEmGramas / taxasParaGrama[destino];
+
+            // Exibe o resultado na tela
+            document.getElementById('resultado').innerText = 
+                `${valor} ${origem} = ${resultadoFinal.toFixed(4)} ${destino}`;
         }
     </script>
 </body>
